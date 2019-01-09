@@ -10,10 +10,6 @@ app.get('/', (req, res) => {
    res.render('home'); 
 });
 
-app.get('/contact', (req,res) => {
-    res.render('contact');
-});
-
 app.get('/resume', (req, res) => {
    res.render('resume'); 
 });
