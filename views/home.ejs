@@ -47,14 +47,17 @@
             <nobr>Alastair Noble</nobr>
          </h1>
          <div class="row">
-            <div class="col-lg-3"></div>
+            <div class="col-lg-2"></div>
             <div class="col-lg-3 wow animated FadeInLeft">
                <a id="contact" href="#myFooter" class="btn btn-lg btn-outline-light">Contact</a>
             </div>
-            <div class="col-lg-3 wow animated FadeInRight">
+            <div class="col-lg-2 wow animated FadeInUp">
                <a class = "space" target="_blank" href="https://www.instagram.com/ester_noble/">
                   <i id="ig" class="fab fa-instagram fa-3x"></i>
                </a>
+            </div>
+            <div class="col-lg-3 wow animated FadeInRight">
+               <a id="contact" href="/resume" class="resum btn btn-lg btn-outline-light">Resume</a>
             </div>
          </div>
       </div>
@@ -366,19 +369,34 @@
    
    <br>
    <!-- about this website -->
-   <div data-aos="flip-left" class="row2">
-      <h2 class="center">
-         About this website
+   <div id="show" data-aos="flip-left" class="row2">
+      <h2 id="about" class="center">
+         About this website <br>
+         <i class="fas fa-chevron-down"></i>
       </h2>
-      <div class="container">
+      
+      <div id="showthis" class="container">
          <p class="jobp">
-            This website was developed entirely by me. For the back end, I built this using Nodejs with Express. For the front end, I used Bootstrap along with animate.css, fontawesome and aos. This website was an easy practice of HTML CSS and JavaScript, which I learned for building <a href="#toolbox">ToolBox</a>, which was a much more complex application (because of databases and queries etc.). 
+            This website was developed entirely by me. For the back end, I built this using Nodejs with Express. For the front end, I used Bootstrap along with jQuery, animate.css, fontawesome and aos. This website was an easy practice of HTML CSS and JavaScript, which I learned for building <a href="#toolbox">ToolBox</a>, which was a much more complex application (because of databases and queries etc.). 
          </p>
          <p class="jobp">
             The code for both can be viewed on my <a class="btn btn-sm btn-outline-primary" href="http://github.com/AlastairNoble/">Github</a>
          </p>
       </div>
    </div>
+   
+   <script>
+      $(document).ready(function(){
+         $("#showthis").hide();
+         
+         $("#show").click(function(){
+           $("#showthis").toggle("slide");
+           $(".fa-chevron-down").toggle("fade");
+         });
+         
+      });
+   </script>
+   
    
    <br>
    <!-- footer -->
