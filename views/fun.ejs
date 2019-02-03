@@ -1,0 +1,131 @@
+<% include partials/generalheader.ejs %>
+<% include partials/homeheader.ejs %>
+<head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        .gmap{
+            width:80%;
+        }
+        #map{
+            height:400px;
+            width:100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">AlastairNoble</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample03">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+            <a class="nav-link my-2 my-md-0" href="/resume">Resume</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link my-2 my-md-0" href="/">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link my-2 my-md-0" href="https://www.linkedin.com/in/alastair-noble/">
+               <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+          </li>
+          <li class="nav-item active">
+               <a class="nav-link my-2 my-md-0" href="https://github.com/AlastairNoble">
+                  <i class="fab fa-github fa-2x"></i>
+               </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br>
+    
+    <script
+  		src="http://code.jquery.com/jquery-3.3.1.min.js"
+  		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  		crossorigin="anonymous">
+  	</script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAeMWvAG5Rx-92i5BzLNXTvX-oGN2Am-c&callback=initMap"
+    async defer></script>
+  		
+    <!--<div class="container thumbnail">-->
+    <!--       <h1 id="center">Post a Ride</h1>-->
+    <!--</div>-->
+    <div class="col-md-2"></div>
+    <div class="container col-md-11" id="formcontainer">
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <input class="form-control" type="text" id="name" name="firstname" placeholder="Fisrt Name">
+            </div>
+            <div class="form-group col-md-4">
+                <input class="form-control" type="text" id = "lat" name="lat" placeholder="lat">
+            </div>
+            <div class="form-group col-md-4">
+                <input class="form-control" type="text" id = "lng" name="lng" placeholder="long">
+            </div>
+        </div>
+        <div class="form-row">
+            <div id="center"class="form-group col-md-12">
+                <button  id="submit" class="btn btn-md btn-success">Submit</button>
+            </div>
+        </div>
+    </div>  
+    <div class="container gmap">
+        <div id="map"></div>
+    </div>
+    
+   
+    <script>
+  		$('#submit').click(function() {
+  		        var coords = {
+  		            lat: parseFloat($('#lat').val()), 
+  		            lng: parseFloat($('#lng').val())
+  		            };
+  		        // var name =<h2> $('#name').val()</h2>;
+  		       
+  			addMarker(coords);
+  				  
+  			});
+  			</script>
+  			<script>
+  			function addMarker(coords){
+  			    console.log(coords);
+  			   // console.log(name);
+                var marker = new google.maps.Marker({
+                  position:coords,
+                  map:map
+                });
+            
+                // var infoWindow = new google.maps.InfoWindow({
+                //     content:''
+                // });
+            }
+
+            marker.addListener('click', function(){
+                infoWindow.open(map, marker);
+            });
+
+    
+  	</script>
+  	 <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 43.6532, lng: -79.3832},
+          zoom: 6
+        });
+      }
+    </script>
+
+    
+  
+        
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</body>
