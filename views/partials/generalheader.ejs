@@ -39,10 +39,12 @@
     <link rel="shortcut icon" href="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.15752-9/49736904_453448018521572_7389024730600177664_n.png?_nc_cat=102&_nc_ht=scontent-yyz1-1.xx&oh=74e92056070bb5b9b5956a932e2be207&oe=5CC25DAB">
 
     <!--babel-->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!--<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>-->
    
-    <!--React.js-->
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+     <!-- Load React. -->
+      <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+      <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+      <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     
- 
+      <!-- Load our React component. -->
+      <script src="like_button.js"></script>
