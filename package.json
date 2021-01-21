@@ -16,7 +16,7 @@
     "express": "^3.21.2",
     "method-override": "^3.0.0",
     "mongoose": "^5.7.4",
-    "socket.io": "~0.9.14",
+    "socket.io": "~2.4.0",
     "wow.js": "^1.2.2"
   },
   "scripts": {
